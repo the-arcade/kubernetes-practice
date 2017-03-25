@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: cluster-api
+spec:
+  template:
+    metadata:
+      labels:
+        app: cluster-api
+    spec:
+      containers:
+      - name: hello-world
+        image: djeffer/cluster-api
+        ports:
+        - containerPort: 8080
+        imagePullPolicy: IfNotPresent
+        env:
+          - name: ROUTE
+            value: "/"
