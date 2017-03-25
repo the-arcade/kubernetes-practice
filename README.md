@@ -13,6 +13,11 @@ Practice with Kubernetes - make a RESTful API out of docker images in a Kubernet
  * `kubectl config use-context minikube`
  * `kubectl cluster-info`
 
+### set docker to use minikube
+(To gain a better understanding of what this command does, run `docker images` before and after.)
+ * eval $(minikube docker-env)
+Note: When you no longer want to use the Minikube host, run `eval $(minikube docker-env -u)`.
+
 ### build the image
  * `docker build -t <image-name> .`
 
