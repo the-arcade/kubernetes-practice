@@ -1,7 +1,11 @@
 #!/bin/bash
 
 # build image
-docker build -t djeffer/cluster-api .
+docker images | grep cluster-api > /dev/null 2>&1
+STATUS=$?
+if [ $STATUS -eq 1 ]
+    then docker build -t djeffer/cluster-api .
+fi
 
 # create or replace deployment
 kubectl get deployments | grep cluster-api > /dev/null 2>&1
