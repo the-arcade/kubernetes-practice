@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: pod-hello-world
+    labels:
+      name: pod-hello-world
+spec:
+  containers:
+  - name: hello-world
+    image: djeffer/cluster-api
+    ports:
+    - containerPort: 8080
+    imagePullPolicy: IfNotPresent
+    env:
+      - name: ROUTE
+        value: "/pod-hello-world"
