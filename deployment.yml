@@ -16,4 +16,4 @@ spec:
         imagePullPolicy: IfNotPresent
         env:
           - name: ROUTE
-            value: "/"
+            value: "/deployment-hello-world"
