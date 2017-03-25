@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # build image
-docker images | grep cluster-api > /dev/null 2>&1
+docker images | grep djeffer/cluster-api > /dev/null 2>&1
 STATUS=$?
 if [ $STATUS -eq 1 ]
     then docker build -t djeffer/cluster-api .
