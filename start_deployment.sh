@@ -1,11 +1,8 @@
 #!/bin/bash
 
 # build image
-docker images | grep djeffer/cluster-api > /dev/null 2>&1
-STATUS=$?
-if [ $STATUS -eq 1 ]
-    then docker build -t djeffer/cluster-api .
-fi
+docker build -t cluster-api/hello-world ./hello-world/
+docker build -t cluster-api/hello-world-again ./hello-world-again/
 
 # create or replace deployment
 kubectl get deployments | grep cluster-api > /dev/null 2>&1
@@ -23,4 +20,4 @@ if [ $STATUS -eq 1 ]
 fi
 
 # view service in browser
-minikube service cluster-api
+echo "run 'minikube service cluster-api' to see your service in the browser"

@@ -6,14 +6,23 @@ spec:
   template:
     metadata:
       labels:
+        name: cluster-api
         app: cluster-api
     spec:
       containers:
-      - name: hello-world
-        image: djeffer/cluster-api
-        ports:
-        - containerPort: 8080
-        imagePullPolicy: IfNotPresent
-        env:
-          - name: ROUTE
-            value: "/deployment-hello-world"
+        - name: hello-world
+          image: cluster-api/hello-world
+          ports:
+          - containerPort: 8081
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: ROUTE
+              value: "/deployment-hello-world"
+        - name: hello-world-again
+          image: cluster-api/hello-world-again
+          ports:
+          - containerPort: 8082
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: ROUTE
+              value: "/deployment-hello-world-again"

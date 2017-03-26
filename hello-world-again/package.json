@@ -1,0 +1,15 @@
+{
+  "name": "cluster-api",
+  "version": "0.0.1",
+  "description": "Kubernetes cluster RESTful API",
+  "main": "server.js",
+  "repository": "git@github.ibm.com:djeffer/cluster-api.git",
+  "author": "Dillon Jeffers <djeffer@us.ibm.com>",
+  "license": "MIT",
+  "scripts": {
+      "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
